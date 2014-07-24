@@ -40,14 +40,14 @@ class Iterator:
 
         return [keys1,valuesl]
 
-    def IntIterator(self):
+    def IntIterator(self)->list:
         """ iterate through a integer and  """
         intlist = []
         for place in str(self.typeOfIteration):
             intlist.append(int(place))
         return intlist
 
-    def Iterate(self, iterationtype):
+    def Iterate(self, iterationtype)->list:
         """ this returns the value we want """
         self.typeOfIteration = iterationtype
         self.ret = None
