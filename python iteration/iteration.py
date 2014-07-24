@@ -6,7 +6,8 @@ Created on 5 jun. 2014
 
 class Iterator:
     """
-    this is my attempt in creating an iterator.
+    this is a simple type based iterator, 
+    checks input and returns a list of elements which the input existed of.
     """
 
     def __init__(self):
@@ -16,7 +17,7 @@ class Iterator:
 
 
 
-    def StringIterator(self):
+    def StringIterator(self)->list:
         """ iterate through a string and returns a list of elements from the string"""
         returnlist = []
         if len(self.typeOfIteration) > 0:
@@ -28,8 +29,8 @@ class Iterator:
         else:
             return "the item given is not iterable"
 
-    def DictIterator(self):
-        """ this returns the keys and the  """
+    def DictIterator(self)->list:
+        """ this returns the keys and the values in a separate list """
         keys1 = []
         valuesl = []
         for key in self.typeOfIteration:
@@ -40,13 +41,13 @@ class Iterator:
         return [keys1,valuesl]
 
     def IntIterator(self):
-        """ this is a bad idea """
+        """ iterate through a integer and  """
         intlist = []
         for place in str(self.typeOfIteration):
             intlist.append(int(place))
         return intlist
 
-    def ReturnIteration(self, iterationtype):
+    def Iterate(self, iterationtype):
         """ this returns the value we want """
         self.typeOfIteration = iterationtype
         self.ret = None
@@ -63,4 +64,4 @@ class Iterator:
 
 if __name__ == '__main__':
     it = Iterator()
-    print(it.ReturnIteration(13))
+    print(it.Iterate(13))
