@@ -8,6 +8,7 @@ class directory:
 
 	def __init__(self, path):
 		self.basepath = self.makepath()+path
+		self.index = len(self.makepath(False))
 		if not self.exists():
 			self.makedirectory()
 
@@ -18,7 +19,7 @@ class directory:
 		return repr(str(self.basepath))
 
 
-	def makepath(self):
+	def makepath(self, string=True):
 		path = os.path.dirname(__file__)
 		path = path.replace("\\", "/")
 		pathsplit = path.split("/")
@@ -30,7 +31,10 @@ class directory:
 				correctDir += pathsplit[i] + "/"
 
 		# print(correctDir)
-		return correctDir
+		if string:
+			return correctDir
+		else:
+			return pathsplit
 
 	def exists(self):
 		""" check if the directory exists """
