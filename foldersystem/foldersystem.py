@@ -30,7 +30,6 @@ class directory:
 		for i in range(0, ((len(pathsplit) - 1))):
 				correctDir += pathsplit[i] + "/"
 
-		# print(correctDir)
 		if string:
 			return correctDir
 		else:
@@ -75,8 +74,8 @@ class directory:
 
 
 	def getFiles(self):
-		l = os.listdir(self.basepath)
-		rl = []
-		for file in l:
-			rl.append(self.basepath+"/"+file)
-		return rl
+		direct = os.listdir(self.basepath)
+		dirlist = []
+		for file in direct:
+			dirlist.append(self.basepath+"/"+file)
+		return dirlist
