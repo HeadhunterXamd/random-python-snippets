@@ -20,6 +20,7 @@ class Iterator:
     def StringIterator(self)->list:
         """ iterate through a string and returns a list of elements from the string"""
         returnlist = []
+        
         if len(self.typeOfIteration) > 0:
 
             for item in self.typeOfIteration:
@@ -33,6 +34,7 @@ class Iterator:
         """ this returns the keys and the values in a separate list """
         keys1 = []
         valuesl = []
+        
         for key in self.typeOfIteration:
 
             keys1.append(key)
@@ -43,8 +45,10 @@ class Iterator:
     def IntIterator(self)->list:
         """ iterate through a integer and  """
         intlist = []
+        
         for place in str(self.typeOfIteration):
             intlist.append(int(place))
+            
         return intlist
 
     def Iterate(self, iterationtype)->list:
@@ -54,14 +58,8 @@ class Iterator:
 
         typedict = {str:self.StringIterator, dict:self.DictIterator, int:self.IntIterator}
 
-#         if len(iterationtype) > 0:
-
         if self.typeOfIteration != None:
             try:
                 return typedict[type(self.typeOfIteration)]()
             except:
                 return "type not implemented yet"
-
-if __name__ == '__main__':
-    it = Iterator()
-    print(it.Iterate(13))
